@@ -1,30 +1,29 @@
+
 package practica1.moviles.pruebaparapc02
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.google.firebase.auth.FirebaseAuth
-import practica1.moviles.pruebaparapc02.ui.login.LoginScreen
-import practica1.moviles.pruebaparapc02.ui.converter.ConverterScreen
+import com.google.firebase.firestore.FirebaseFirestore
+import practica1.moviles.pruebaparapc02.ui.liga1.ListadoScreen
+import practica1.moviles.pruebaparapc02.ui.liga1.RegistroScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
-            val firebaseAuth = FirebaseAuth.getInstance()
-            val startDestination = if (firebaseAuth.currentUser != null) "converter" else "login"
+            val firestore = FirebaseFirestore.getInstance()
 
-            NavHost(navController = navController, startDestination = startDestination) {
-                composable("login") {
-                    LoginScreen(navController = navController)
+            NavHost(navController = navController, startDestination = "registro") {
+                composable("registro") {
+                    RegistroScreen(navController = navController, db = firestore)
                 }
-                composable("converter") {
-                    ConverterScreen(navController = navController)
+                composable("listado") {
+                    ListadoScreen(navController = navController, db = firestore)
                 }
             }
         }
