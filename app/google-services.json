@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "318993849860",
+    "project_id": "prueba-para-pc02",
+    "storage_bucket": "prueba-para-pc02.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:318993849860:android:01017a4ca42da157505f51",
+        "android_client_info": {
+          "package_name": "practica1.moviles.pruebaparapc02"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVRTGU_-p-RkT737-Wc-ANEgtCeDzfztc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
