@@ -84,12 +84,12 @@ fun ConverterScreen(navController: NavController) {
                 result = "$amountValue $fromCurrency equivalen a ${String.format("%.2f", convertedAmount)} $toCurrency"
 
                 val conversion = hashMapOf(
-                    "userId" to auth.currentUser?.uid,
-                    "from" to fromCurrency,
-                    "to" to toCurrency,
-                    "amount" to amountValue,
-                    "result" to convertedAmount,
-                    "timestamp" to com.google.firebase.firestore.FieldValue.serverTimestamp()
+                    "usuario_uid" to auth.currentUser?.uid,
+                    "fecha_hora" to com.google.firebase.firestore.FieldValue.serverTimestamp(),
+                    "monto" to amountValue,
+                    "moneda_origen" to fromCurrency,
+                    "moneda_destino" to toCurrency,
+                    "resultado_conversion" to convertedAmount
                 )
                 firestore.collection("conversions").add(conversion)
 
